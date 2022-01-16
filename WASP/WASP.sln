@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WASP", "WASP\WASP.csproj", "{6C307BD5-9F80-4C99-B49D-BBA6DE880B69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C307BD5-9F80-4C99-B49D-BBA6DE880B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C307BD5-9F80-4C99-B49D-BBA6DE880B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C307BD5-9F80-4C99-B49D-BBA6DE880B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C307BD5-9F80-4C99-B49D-BBA6DE880B69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41F03EA6-9F70-404B-8EDF-70C74BA00D70}
+	EndGlobalSection
+EndGlobal
