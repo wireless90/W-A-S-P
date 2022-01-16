@@ -133,9 +133,9 @@
             // 
             this.dashboardRightPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(168)))), ((int)(((byte)(14)))));
             this.dashboardRightPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dashboardRightPanel.Location = new System.Drawing.Point(195, 0);
+            this.dashboardRightPanel.Location = new System.Drawing.Point(197, 0);
             this.dashboardRightPanel.Name = "dashboardRightPanel";
-            this.dashboardRightPanel.Size = new System.Drawing.Size(5, 88);
+            this.dashboardRightPanel.Size = new System.Drawing.Size(3, 88);
             this.dashboardRightPanel.TabIndex = 3;
             // 
             // closeButton
@@ -162,6 +162,7 @@
             this.Controls.Add(this.navigationPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.navigationPanel.ResumeLayout(false);
             this.settingsPanel.ResumeLayout(false);
