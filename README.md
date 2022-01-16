@@ -1,5 +1,5 @@
 # W-A-S-P
-A AWL Bypassing tester using LOLBins with the help of the great project [LOLBAS](https://lolbas-project.github.io/).
+An application-whitelisting-bypass tester using LOLBins with the help of the great project [LOLBAS](https://lolbas-project.github.io/).
 
 (Still in development...) 
 
