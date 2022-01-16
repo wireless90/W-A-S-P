@@ -1,5 +1,5 @@
 # W-A-S-P
-An application-whitelisting-bypass tester using LOLBins with the help of the great project [LOLBAS](https://lolbas-project.github.io/).
+A Whitelisted Application Security Pentesting tool, using LOLBins with the help of the great project [LOLBAS](https://lolbas-project.github.io/).
 
 (Still in development...) 
 
