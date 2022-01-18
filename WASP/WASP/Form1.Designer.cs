@@ -38,6 +38,7 @@
             this.dashboardButton = new System.Windows.Forms.Button();
             this.dashboardRightPanel = new System.Windows.Forms.Panel();
             this.closeButton = new System.Windows.Forms.Button();
+            this.scanButton = new System.Windows.Forms.Button();
             this.navigationPanel.SuspendLayout();
             this.settingsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
@@ -152,12 +153,23 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // scanButton
+            // 
+            this.scanButton.Location = new System.Drawing.Point(302, 358);
+            this.scanButton.Name = "scanButton";
+            this.scanButton.Size = new System.Drawing.Size(120, 40);
+            this.scanButton.TabIndex = 3;
+            this.scanButton.Text = "Scan";
+            this.scanButton.UseVisualStyleBackColor = true;
+            this.scanButton.Click += new System.EventHandler(this.scanButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(951, 577);
+            this.Controls.Add(this.scanButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.navigationPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -183,5 +195,6 @@
         private Panel settingsPanel;
         private Button settingsButton;
         private Panel settingsRightPanel;
+        private Button scanButton;
     }
 }

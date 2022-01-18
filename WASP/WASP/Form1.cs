@@ -1,3 +1,6 @@
+using WASP.Common.Models;
+using WASP.Common.Vulnerabilities.Executions.Mshta;
+
 namespace WASP
 {
     public partial class MainForm : Form
@@ -29,6 +32,23 @@ namespace WASP
             }
 
             base.WndProc(ref m);
+        }
+
+        private void scanButton_Click(object sender, EventArgs e)
+        {
+            LolBin mshtaLolBin = new LolBin("mshta.exe", "A html application program")
+                                    .RegisterVulnerability(new MshtaExecuteJScriptExecutionVulnerability());
+
+            bool isSuccess = mshtaLolBin.Vulnerabilities.First().TryExploit();
+
+            if (isSuccess)
+            {
+                MessageBox.Show("Exploited...");
+            }
+            else
+            {
+                MessageBox.Show("Failed...");
+            }
         }
     }
 }
