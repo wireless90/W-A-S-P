@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WASP.Application\WASP.Application.csproj" />
+    <ProjectReference Include="..\WASP.Domain\WASP.Domain.csproj" />
+    <ProjectReference Include="..\WASP.Infrastructure\WASP.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -21,6 +27,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\IOC\Modules\" />
   </ItemGroup>
 
 </Project>

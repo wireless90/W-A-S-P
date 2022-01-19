@@ -1,6 +1,6 @@
-﻿using WASP.Common.Interfaces;
+﻿using WASP.Domain.Common.Interfaces;
 
-namespace WASP.Common.Models
+namespace WASP.Domain.Entities
 {
     public class LolBin
     {

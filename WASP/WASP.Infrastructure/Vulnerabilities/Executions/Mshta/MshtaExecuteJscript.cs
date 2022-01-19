@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
-using WASP.Common.Interfaces;
+using WASP.Domain.Common.Interfaces;
 
-namespace WASP.Common.Vulnerabilities.Executions.Mshta
+namespace WASP.Infrastructure.Vulnerabilities.Executions.Mshta
 {
     public class MshtaExecuteJScriptExecutionVulnerability : ExecutionVulnerability
     {
@@ -19,7 +19,7 @@ namespace WASP.Common.Vulnerabilities.Executions.Mshta
 
             Process.GetProcessesByName("calc.exe").ToList().ForEach(p => p.Close());
 
-            Process.Start(new ProcessStartInfo(jscriptName) {  UseShellExecute = true });
+            Process.Start(new ProcessStartInfo(jscriptName) { UseShellExecute = true });
 
             Thread.Sleep(2000);
             Process[] processes = Process.GetProcessesByName("Calculator");
@@ -27,7 +27,7 @@ namespace WASP.Common.Vulnerabilities.Executions.Mshta
             bool success = processes.Any(p => p.ProcessName == "Calculator");
 
 
-            if(success)
+            if (success)
             {
                 Process.GetProcessesByName("Calculator").ToList().ForEach(p => p.Close());
             }

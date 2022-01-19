@@ -1,18 +1,24 @@
-using WASP.Common.Models;
-using WASP.Common.Vulnerabilities.Executions.Mshta;
+using Autofac;
+using WASP.Common.IOC;
 
 namespace WASP
 {
     public partial class MainForm : Form
     {
+        private readonly IContainer _container;
         public MainForm()
         {
             InitializeComponent();
+
+            _container = ContainerConfig.CreateContainer();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            using (ILifetimeScope lifetime = _container.BeginLifetimeScope())
+            {
+                
+            }
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -36,8 +42,7 @@ namespace WASP
 
         private void scanButton_Click(object sender, EventArgs e)
         {
-            LolBin mshtaLolBin = new LolBin("mshta.exe", "A html application program")
-                                    .RegisterVulnerability(new MshtaExecuteJScriptExecutionVulnerability());
+            
 
             bool isSuccess = mshtaLolBin.Vulnerabilities.First().TryExploit();
 
