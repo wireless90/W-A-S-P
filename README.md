@@ -1,7 +1,9 @@
-# W-A-S-P
-A Whitelisted Application Security Pentesting tool, using LOLBins with the help of the great project [LOLBAS](https://lolbas-project.github.io/).
+<p align="center"><img src="https://media.istockphoto.com/vectors/abstract-wasp-logo-stylized-insect-icon-wasp-hornet-bee-or-bumblebee-vector-id1194258523?k=20&m=1194258523&s=612x612&w=0&h=vJzl19OPcGTo9W8qRxwKZxxDwZA3E_USKgKEfBBev-E=" alt="WASP"/></a></p>
+<h1 align="center">WASP</h1>
+<p align="center">A Whitelisted Application Security Pentesting tool, using LOLBins with the help of the great project [LOLBAS](https://lolbas-project.github.io/).</p>
 
-(Still in development...) 
+
+<p align="center">(Still in development...) </p>
 
 # Introduction
 
