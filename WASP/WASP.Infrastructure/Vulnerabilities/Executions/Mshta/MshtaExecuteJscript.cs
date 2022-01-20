@@ -5,31 +5,53 @@ namespace WASP.Infrastructure.Vulnerabilities.Executions.Mshta
 {
     public class MshtaExecuteJScriptExecutionVulnerability : ExecutionVulnerability
     {
+        private const string JSCRIPT = @"
+                            <script LANGUAGE=""JScript"">
+                                new ActiveXObject(""WScript.Shell"").run(""calc.exe"");
+                            </script >
+                        ";
+
+        private const string JSCRIPT_NAME = $"{nameof(MshtaExecuteJScriptExecutionVulnerability)}.hta";
+
+        private const string JSCRIPT_PROCESS_NAME = $"mshta";
+
+        private const string CALCULATOR_PROCESS = "calc.exe";
+
+        private const string CALCULATOR_PROCESS_NAME = "Calculator";
+
+        private const int DELAY_MS = 2000;
+
+        public override void Cleanup()
+        {
+            string[] processesToBeStopped = new string[] { CALCULATOR_PROCESS_NAME, JSCRIPT_PROCESS_NAME };
+            
+            Process.GetProcesses()
+                .Where(p => processesToBeStopped.Contains(p.ProcessName))
+                .ToList()
+                .ForEach(p =>  p.Kill());
+        }
+
         public override bool TryExploit()
         {
-            string jscript = @"
-                                <script LANGUAGE=""JScript"">
-                                    new ActiveXObject(""WScript.Shell"").run(""calc.exe"");
-                                </script >
-                            ";
+            File.WriteAllText(JSCRIPT_NAME, JSCRIPT);
 
-            string jscriptName = $"{nameof(MshtaExecuteJScriptExecutionVulnerability)}.hta";
+            Process.GetProcessesByName(CALCULATOR_PROCESS)
+                .ToList()
+                .ForEach(p => p.Close());
 
-            File.WriteAllText(jscriptName, jscript);
+            Process.Start(new ProcessStartInfo(JSCRIPT_NAME) { UseShellExecute = true });
 
-            Process.GetProcessesByName("calc.exe").ToList().ForEach(p => p.Close());
+            Thread.Sleep(DELAY_MS);
 
-            Process.Start(new ProcessStartInfo(jscriptName) { UseShellExecute = true });
+            Process[] processes = Process.GetProcessesByName(CALCULATOR_PROCESS_NAME);
 
-            Thread.Sleep(2000);
-            Process[] processes = Process.GetProcessesByName("Calculator");
-
-            bool success = processes.Any(p => p.ProcessName == "Calculator");
-
+            bool success = processes.Any(p => p.ProcessName == CALCULATOR_PROCESS_NAME);
 
             if (success)
             {
-                Process.GetProcessesByName("Calculator").ToList().ForEach(p => p.Close());
+                Process.GetProcessesByName(CALCULATOR_PROCESS_NAME)
+                    .ToList()
+                    .ForEach(p => p.Close());
             }
 
             return success;
