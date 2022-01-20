@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using WASP.Domain.Entities;
 using WASP.Infrastructure.LolBins;
-using WASP.Infrastructure.Vulnerabilities.Executions.Mshta;
 
 namespace WASP.Infrastructure.Common.IOC.Modules
 {

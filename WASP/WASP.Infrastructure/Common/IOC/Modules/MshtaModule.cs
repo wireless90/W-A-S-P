@@ -10,7 +10,7 @@ namespace WASP.Infrastructure.Common.IOC.Modules
         {
             builder.Register(context =>
             {
-                return (MshtaLolBin) new MshtaLolBin("mshta.exe", "A html application program")
+                return (MshtaLolBin)new MshtaLolBin("mshta.exe", "A html application program")
                                     .RegisterVulnerability(new MshtaExecuteJScriptExecutionVulnerability());
             })
             .AsSelf();

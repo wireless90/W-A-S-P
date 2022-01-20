@@ -16,7 +16,7 @@ namespace WASP
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             IContainer container = ContainerConfig.CreateContainer();
-            using(ILifetimeScope scope = container.BeginLifetimeScope())
+            using (ILifetimeScope scope = container.BeginLifetimeScope())
             {
                 IMediator mediator = container.Resolve<IMediator>();
 

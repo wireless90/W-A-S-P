@@ -1,6 +1,4 @@
-using Autofac;
 using MediatR;
-using WASP.Common.IOC;
 using WASP.Core.MainContext.Commands.ExecutionVulnerabilityScan;
 
 namespace WASP
