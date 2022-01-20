@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Common\IOC\Modules\**" />
+    <EmbeddedResource Remove="Common\IOC\Modules\**" />
+    <None Remove="Common\IOC\Modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\WASP.Application\WASP.Core.csproj" />
     <ProjectReference Include="..\WASP.Domain\WASP.Domain.csproj" />
     <ProjectReference Include="..\WASP.Infrastructure\WASP.Infrastructure.csproj" />
@@ -27,10 +33,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Common\IOC\Modules\" />
   </ItemGroup>
 
 </Project>
