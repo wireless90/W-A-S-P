@@ -128,7 +128,6 @@
             this.dashboardButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dashboardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.dashboardButton.UseVisualStyleBackColor = true;
-            this.dashboardButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // dashboardRightPanel
             // 

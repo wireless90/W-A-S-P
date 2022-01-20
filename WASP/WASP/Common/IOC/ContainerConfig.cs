@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using WASP.Application.Common.IOC;
+using WASP.Core.Common.IOC;
 using WASP.Infrastructure.Common.IOC;
 
 namespace WASP.Common.IOC

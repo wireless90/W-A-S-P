@@ -1,7 +1,7 @@
 ﻿using Autofac;
-using WASP.Application.Common.IOC.Modules;
+using WASP.Core.Common.IOC.Modules;
 
-namespace WASP.Application.Common.IOC
+namespace WASP.Core.Common.IOC
 {
     public class ApplicationModule : Module
     {

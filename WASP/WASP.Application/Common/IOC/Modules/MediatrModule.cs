@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using MediatR.Extensions.Autofac.DependencyInjection;
 
-namespace WASP.Application.Common.IOC.Modules
+namespace WASP.Core.Common.IOC.Modules
 {
     public class MediatrModule : Module
     {

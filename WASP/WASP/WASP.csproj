@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WASP.Application\WASP.Application.csproj" />
+    <ProjectReference Include="..\WASP.Application\WASP.Core.csproj" />
     <ProjectReference Include="..\WASP.Domain\WASP.Domain.csproj" />
     <ProjectReference Include="..\WASP.Infrastructure\WASP.Infrastructure.csproj" />
   </ItemGroup>

@@ -1,19 +1,25 @@
 ﻿using Autofac;
+using WASP.Domain.Entities;
 using WASP.Infrastructure.LolBins;
 using WASP.Infrastructure.Vulnerabilities.Executions.Mshta;
 
 namespace WASP.Infrastructure.Common.IOC.Modules
 {
-    public class MshtaModule : Module
+    public class LolBinsModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
+
             builder.Register(context =>
             {
-                return (MshtaLolBin) new MshtaLolBin("mshta.exe", "A html application program")
-                                    .RegisterVulnerability(new MshtaExecuteJScriptExecutionVulnerability());
-            })
-            .AsSelf();
+                IComponentContext componentContext = context.Resolve<IComponentContext>();
+
+                return new List<LolBin>()
+                {
+                    componentContext.Resolve<MshtaLolBin>()
+                };
+
+            }).As<IEnumerable<LolBin>>();
 
 
             base.Load(builder);

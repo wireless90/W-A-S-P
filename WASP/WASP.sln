@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WASP", "WASP\WASP.csproj", "{6C307BD5-9F80-4C99-B49D-BBA6DE880B69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WASP.Domain", "WASP.Domain\WASP.Domain.csproj", "{6BBA2F9E-62DB-4D61-BAA8-8866A65E2AF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WASP.Domain", "WASP.Domain\WASP.Domain.csproj", "{6BBA2F9E-62DB-4D61-BAA8-8866A65E2AF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WASP.Application", "WASP.Application\WASP.Application.csproj", "{48B21700-4273-4ECD-A31D-3F6EF8B75624}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WASP.Core", "WASP.Application\WASP.Core.csproj", "{48B21700-4273-4ECD-A31D-3F6EF8B75624}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WASP.Infrastructure", "WASP.Infrastructure\WASP.Infrastructure.csproj", "{EF389723-B865-435B-985B-7FC01E17C5FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WASP.Infrastructure", "WASP.Infrastructure\WASP.Infrastructure.csproj", "{EF389723-B865-435B-985B-7FC01E17C5FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,3 +1,7 @@
+using Autofac;
+using MediatR;
+using WASP.Common.IOC;
+
 namespace WASP
 {
     internal static class Program
@@ -11,7 +15,13 @@ namespace WASP
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+            IContainer container = ContainerConfig.CreateContainer();
+            using(ILifetimeScope scope = container.BeginLifetimeScope())
+            {
+                IMediator mediator = container.Resolve<IMediator>();
+
+                Application.Run(new MainForm(mediator));
+            }
         }
     }
 }

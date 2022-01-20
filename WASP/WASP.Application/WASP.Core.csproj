@@ -16,4 +16,8 @@
     <ProjectReference Include="..\WASP.Domain\WASP.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="MainContext\Queries\" />
+  </ItemGroup>
+
 </Project>

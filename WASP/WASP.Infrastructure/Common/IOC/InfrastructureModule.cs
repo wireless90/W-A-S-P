@@ -7,7 +7,9 @@ namespace WASP.Infrastructure.Common.IOC
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterModule<MshtaModule>();
+            builder
+                .RegisterModule<MshtaModule>()
+                .RegisterModule<LolBinsModule>();
 
             base.Load(builder);
         }
