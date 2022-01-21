@@ -39,6 +39,10 @@
             this.dashboardRightPanel = new System.Windows.Forms.Panel();
             this.closeButton = new System.Windows.Forms.Button();
             this.scanButton = new System.Windows.Forms.Button();
+            this.resultsListView = new System.Windows.Forms.ListView();
+            this.nameHeader = new System.Windows.Forms.ColumnHeader();
+            this.descriptionHeader = new System.Windows.Forms.ColumnHeader();
+            this.vulnerabilitiesHeader = new System.Windows.Forms.ColumnHeader();
             this.navigationPanel.SuspendLayout();
             this.settingsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
@@ -72,7 +76,7 @@
             this.settingsButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.settingsButton.FlatAppearance.BorderSize = 0;
             this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settingsButton.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.settingsButton.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.settingsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(168)))), ((int)(((byte)(14)))));
             this.settingsButton.Image = ((System.Drawing.Image)(resources.GetObject("settingsButton.Image")));
             this.settingsButton.Location = new System.Drawing.Point(0, 0);
@@ -117,7 +121,7 @@
             this.dashboardButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.dashboardButton.FlatAppearance.BorderSize = 0;
             this.dashboardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dashboardButton.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dashboardButton.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dashboardButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(168)))), ((int)(((byte)(14)))));
             this.dashboardButton.Image = ((System.Drawing.Image)(resources.GetObject("dashboardButton.Image")));
             this.dashboardButton.Location = new System.Drawing.Point(0, 0);
@@ -154,13 +158,51 @@
             // 
             // scanButton
             // 
-            this.scanButton.Location = new System.Drawing.Point(302, 358);
+            this.scanButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.scanButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(168)))), ((int)(((byte)(14)))));
+            this.scanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.scanButton.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.scanButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(168)))), ((int)(((byte)(14)))));
+            this.scanButton.Image = ((System.Drawing.Image)(resources.GetObject("scanButton.Image")));
+            this.scanButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.scanButton.Location = new System.Drawing.Point(253, 385);
             this.scanButton.Name = "scanButton";
-            this.scanButton.Size = new System.Drawing.Size(120, 40);
+            this.scanButton.Size = new System.Drawing.Size(226, 93);
             this.scanButton.TabIndex = 3;
             this.scanButton.Text = "Scan";
-            this.scanButton.UseVisualStyleBackColor = true;
+            this.scanButton.UseVisualStyleBackColor = false;
             this.scanButton.Click += new System.EventHandler(this.scanButton_Click);
+            // 
+            // resultsListView
+            // 
+            this.resultsListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.resultsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.nameHeader,
+            this.descriptionHeader,
+            this.vulnerabilitiesHeader});
+            this.resultsListView.ForeColor = System.Drawing.Color.White;
+            this.resultsListView.FullRowSelect = true;
+            this.resultsListView.Location = new System.Drawing.Point(253, 121);
+            this.resultsListView.Name = "resultsListView";
+            this.resultsListView.Size = new System.Drawing.Size(563, 239);
+            this.resultsListView.TabIndex = 4;
+            this.resultsListView.UseCompatibleStateImageBehavior = false;
+            this.resultsListView.View = System.Windows.Forms.View.Details;
+            // 
+            // nameHeader
+            // 
+            this.nameHeader.Text = "Name";
+            this.nameHeader.Width = 100;
+            // 
+            // descriptionHeader
+            // 
+            this.descriptionHeader.Text = "Description";
+            this.descriptionHeader.Width = 300;
+            // 
+            // vulnerabilitiesHeader
+            // 
+            this.vulnerabilitiesHeader.Text = "Vulnerabilities";
+            this.vulnerabilitiesHeader.Width = 100;
             // 
             // MainForm
             // 
@@ -168,13 +210,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(951, 577);
+            this.Controls.Add(this.resultsListView);
             this.Controls.Add(this.scanButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.navigationPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "WASP";
             this.navigationPanel.ResumeLayout(false);
             this.settingsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
@@ -195,5 +241,9 @@
         private Button settingsButton;
         private Panel settingsRightPanel;
         private Button scanButton;
+        private ListView resultsListView;
+        private ColumnHeader nameHeader;
+        private ColumnHeader descriptionHeader;
+        private ColumnHeader vulnerabilitiesHeader;
     }
 }

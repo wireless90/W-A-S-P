@@ -9,6 +9,7 @@ namespace WASP.Infrastructure.Common.IOC
         {
             builder
                 .RegisterModule<MshtaModule>()
+                .RegisterModule<ExplorerModule>()
                 .RegisterModule<LolBinsModule>();
 
             base.Load(builder);

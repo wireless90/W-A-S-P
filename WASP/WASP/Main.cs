@@ -35,7 +35,22 @@ namespace WASP
 
         private async void scanButton_Click(object sender, EventArgs e)
         {
-            await _mediator.Send(new ExecutionVulnerabilityScanQuery());
+            IEnumerable<ExecutionVulnerabilityScanViewModel> results = await _mediator.Send(new ExecutionVulnerabilityScanQuery());
+
+            resultsListView.Items.Clear();
+
+            results.ToList().ForEach(result =>
+            {
+                int totalTestCases = result.ExecutionVulnerabilityResults.Count;
+                int totalSuccess = result.ExecutionVulnerabilityResults.Where(x => x.IsSuccess).Count();
+
+                ListViewItem item = new ListViewItem(new[] { result.Name, result.Description, $"{totalTestCases}/{totalSuccess}" })
+                {
+                    ForeColor = Color.White
+                };
+
+                resultsListView.Items.Add(item);
+            });
         }
     }
 }
