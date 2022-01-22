@@ -12,6 +12,7 @@ namespace WASP.Infrastructure.Common.IOC
                 .RegisterModule<ExplorerModule>()
                 .RegisterModule<ForFilesModule>()
                 .RegisterModule<WmicModule>()
+                .RegisterModule<WlrmdrModule>()
                 .RegisterModule<LolBinsModule>();
 
             base.Load(builder);
