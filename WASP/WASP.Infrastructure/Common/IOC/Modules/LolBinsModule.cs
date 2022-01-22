@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using System.Reflection;
 using WASP.Domain.Entities;
-using WASP.Infrastructure.LolBins;
 
 namespace WASP.Infrastructure.Common.IOC.Modules
 {
@@ -13,7 +12,7 @@ namespace WASP.Infrastructure.Common.IOC.Modules
             builder.Register(context =>
             {
                 IComponentContext componentContext = context.Resolve<IComponentContext>();
-                
+
                 Assembly executingAssembly = Assembly.GetExecutingAssembly();
 
                 List<LolBin> result = new List<LolBin>();
