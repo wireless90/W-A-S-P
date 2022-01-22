@@ -6,6 +6,5 @@ namespace WASP.Infrastructure.LolBins
     {
         public MshtaLolBin(string name, string description) : base(name, description) { }
 
-
     }
 }

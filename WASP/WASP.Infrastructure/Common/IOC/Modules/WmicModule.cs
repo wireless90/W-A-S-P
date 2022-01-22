@@ -4,14 +4,14 @@ using WASP.Infrastructure.Vulnerabilities.Executions.ForFiles;
 
 namespace WASP.Infrastructure.Common.IOC.Modules
 {
-    public class ForFilesModule : Module
+    public class WmicModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
             builder.Register(context =>
             {
-                return (ForFilesLolBin)new ForFilesLolBin("forfiles.exe", "A program that selects and executes a command on a file or set of files. This command is useful for batch processing.")
-                                            .RegisterVulnerability(new ForFilesExecuteCalcExecutionVulnerability());
+                return (WmicLolBin)new WmicLolBin()
+                                            .RegisterVulnerability(new WmicExecuteCalcExecutionVulnerability());
 
             })
             .AsSelf();

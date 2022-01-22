@@ -11,6 +11,7 @@ namespace WASP.Infrastructure.Common.IOC
                 .RegisterModule<MshtaModule>()
                 .RegisterModule<ExplorerModule>()
                 .RegisterModule<ForFilesModule>()
+                .RegisterModule<WmicModule>()
                 .RegisterModule<LolBinsModule>();
 
             base.Load(builder);
