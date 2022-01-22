@@ -16,7 +16,8 @@ namespace WASP.Infrastructure.Common.IOC.Modules
                 return new List<LolBin>()
                 {
                     componentContext.Resolve<MshtaLolBin>(),
-                    componentContext.Resolve<ExplorerLolBin>()
+                    componentContext.Resolve<ExplorerLolBin>(),
+                    componentContext.Resolve<ForFilesLolBin>()
                 };
 
             }).As<IEnumerable<LolBin>>();
