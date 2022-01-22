@@ -7,8 +7,7 @@
 
 # Introduction
 
-![image](https://user-images.githubusercontent.com/12537739/150620417-f30c19b1-e63f-4b9d-8635-18f8ca42a50e.png)
-
+![image](https://user-images.githubusercontent.com/12537739/150623179-075a65ce-098f-4f5d-96c4-704bf36e3d63.png)
 
 
 # Credits
