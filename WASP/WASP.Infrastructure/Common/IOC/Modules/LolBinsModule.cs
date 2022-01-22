@@ -13,11 +13,10 @@ namespace WASP.Infrastructure.Common.IOC.Modules
             {
                 IComponentContext componentContext = context.Resolve<IComponentContext>();
 
-                Assembly executingAssembly = Assembly.GetExecutingAssembly();
-
                 List<LolBin> result = new List<LolBin>();
 
-                executingAssembly
+                Assembly
+                    .GetExecutingAssembly()
                     .ExportedTypes
                     .Where(t => t.IsClass && t.IsAssignableTo(typeof(LolBin)) && t.GetType() != typeof(LolBin))
                     .ToList()
