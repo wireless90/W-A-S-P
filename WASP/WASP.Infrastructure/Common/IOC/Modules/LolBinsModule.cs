@@ -1,10 +1,11 @@
 ﻿using Autofac;
+using System.Reflection;
 using WASP.Domain.Entities;
 using WASP.Infrastructure.LolBins;
 
 namespace WASP.Infrastructure.Common.IOC.Modules
 {
-    public class LolBinsModule : Module
+    public class LolBinsModule : Autofac.Module
     {
         protected override void Load(ContainerBuilder builder)
         {
@@ -12,14 +13,18 @@ namespace WASP.Infrastructure.Common.IOC.Modules
             builder.Register(context =>
             {
                 IComponentContext componentContext = context.Resolve<IComponentContext>();
+                
+                Assembly executingAssembly = Assembly.GetExecutingAssembly();
 
-                return new List<LolBin>()
-                {
-                    componentContext.Resolve<MshtaLolBin>(),
-                    componentContext.Resolve<ExplorerLolBin>(),
-                    componentContext.Resolve<ForFilesLolBin>(),
-                    componentContext.Resolve<WmicLolBin>()
-                };
+                List<LolBin> result = new List<LolBin>();
+
+                executingAssembly
+                    .ExportedTypes
+                    .Where(t => t.IsClass && t.IsAssignableTo(typeof(LolBin)) && t.GetType() != typeof(LolBin))
+                    .ToList()
+                    .ForEach(lolbinType => result.Add((LolBin)componentContext.Resolve(lolbinType)));
+
+                return result.AsEnumerable();
 
             }).As<IEnumerable<LolBin>>();
 
